@@ -56,13 +56,12 @@ server.put('/api/users/:id', (req, res) => {
                 res.status(400).json({ message: "Please provide name and bio for the user" })
                 return;
             } else {
-                res.status(200).json()
+                res.json(result)
             }
         })
         .catch(result => {
-            res.status(500).json({ message: "The user information could not be modified" })
+            res.status(500).json({ message: "The user information could not be modified" });
         })
-
 })
 
 server.delete('/api/users/:id', (req, res) => {
